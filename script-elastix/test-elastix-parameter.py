@@ -170,14 +170,14 @@ conditions = [
 case_number = range(17, 41)
 # case_number = [1, 2, 3, 4, 6, 7, 8, 9, 10]
 
-elastix_config_dir = "/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/reg-param/config"
-elastix_tform_dir = "/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
+elastix_config_dir = "/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/reg-param/config"
+elastix_tform_dir = "/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
 
 v = napari.Viewer()
 for nn in case_number:
     print(f"C{nn:02}")
-    ref_path = rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-ref.tif"
-    moving_path = rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-moving.tif"
+    ref_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-ref.tif"
+    moving_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-moving.tif"
     img, params_tform, params_reg = try_conditions(
         ref_path=ref_path, moving_path=moving_path, conditions=conditions
     )

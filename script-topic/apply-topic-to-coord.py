@@ -8,7 +8,7 @@ case_number = range(34, 41)
 for nn in case_number:
     print(nn)
     _topic = tifffile.imread(
-        rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/topic-img/C{nn:02}-topics.ome.tif"
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/topic-img/C{nn:02}-topics.ome.tif"
     )
     assert (_topic > 0).sum(axis=0).max() == 1
     topic = (_topic > 0) * np.arange(len(_topic)).reshape(-1, 1, 1)
@@ -18,7 +18,7 @@ for nn in case_number:
     topic = np.pad(topic, [(0, 1), (0, 1)])
 
     df = pd.read_csv(
-        rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-xy-moving-mapped.csv.zip",
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-xy-moving-mapped.csv.zip",
         index_col="CellID",
     )
 
@@ -30,7 +30,7 @@ for nn in case_number:
 
     df["tTopic"] = topic[coord[:, 0], coord[:, 1]]
     df.to_csv(
-        rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-xy-moving-mapped-topic.csv.zip",
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-xy-moving-mapped-topic.csv.zip",
         compression="zip",
     )
 
@@ -43,7 +43,7 @@ def run33():
     nn = 33
     print(nn)
     _topic = tifffile.imread(
-        rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/topic-img/C{nn:02}-topics.ome.tif"
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/topic-img/C{nn:02}-topics.ome.tif"
     )
     assert (_topic > 0).sum(axis=0).max() == 1
     topic = (_topic > 0) * np.arange(len(_topic)).reshape(-1, 1, 1)
@@ -53,7 +53,7 @@ def run33():
     topic = np.pad(topic, [(0, 1), (0, 1)])
 
     df = pd.read_csv(
-        r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped.csv.zip",
+        r"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped.csv.zip",
         index_col="CellID",
     )
 
@@ -65,7 +65,7 @@ def run33():
 
     df["tTopic"] = topic[coord[:, 0], coord[:, 1]]
     df.to_csv(
-        r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped-topic.csv.zip",
+        r"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped-topic.csv.zip",
         compression="zip",
     )
 

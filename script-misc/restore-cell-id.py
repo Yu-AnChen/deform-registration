@@ -162,57 +162,57 @@ Parallel(n_jobs=4, verbose=1)(
 
 
 id_paths = """
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C17-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C18-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C19-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C20-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C21-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C22-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C23-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C24-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C25-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C26-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C27-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C28-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C29-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C30-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C31-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C32-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C34-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C35-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C36-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C37-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C38-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C39-cylinter-id-moving.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C40-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C17-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C18-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C19-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C20-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C21-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C22-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C23-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C24-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C25-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C26-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C27-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C28-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C29-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C30-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C31-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C32-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C34-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C35-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C36-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C37-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C38-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C39-cylinter-id-moving.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C40-cylinter-id-moving.csv.zip
 """.strip().split("\n")
 
 topic_paths = """
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C17-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C18-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C19-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C20-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C21-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C22-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C23-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C24-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C25-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C26-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C27-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C28-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C29-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C30-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C31-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C32-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C34-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C35-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C36-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C37-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C38-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C39-xy-moving-mapped-topic.csv.zip
-/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C40-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C17-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C18-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C19-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C20-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C21-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C22-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C23-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C24-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C25-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C26-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C27-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C28-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C29-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C30-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C31-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C32-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C33-xy-moving-merged-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C34-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C35-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C36-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C37-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C38-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C39-xy-moving-mapped-topic.csv.zip
+/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C40-xy-moving-mapped-topic.csv.zip
 """.strip().split("\n")
 
 
