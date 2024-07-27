@@ -11,7 +11,8 @@ def _ncc(img1, img2):
         np.linalg.norm(img1) * np.linalg.norm(img2)
     )
 
-
+# comparison of cross correlation and normalized dot product
+# https://xcdskd.readthedocs.io/en/latest/cross_correlation/cross_correlation_coefficient.html
 def norm_dot(img1, img2):
     """
     return normalized dot product of the arrays img1, img2
