@@ -54,6 +54,10 @@ def get_default_crc_params(
 def run_one_setting(ref_path, moving_path, setting):
     ref = tifffile.imread(ref_path)
     moving = tifffile.imread(moving_path)
+    return _run_one_setting(ref, moving, setting)
+
+
+def _run_one_setting(ref, moving, setting):
     if setting is None:
         setting = {}
     elastix_parameter = itk.ParameterObject.New()
