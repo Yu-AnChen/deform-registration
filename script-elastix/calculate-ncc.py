@@ -80,7 +80,7 @@ def compare_deformed(
 
 
 elastix_dir = pathlib.Path(
-    r"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
+    r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
 )
 
 v = napari.Viewer()
@@ -89,8 +89,8 @@ case_number = range(20, 30)
 
 for nn in case_number:
     print(f"C{nn:02}")
-    ref_path = rf"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-ref.tif"
-    moving_path = rf"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-moving.tif"
+    ref_path = rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-ref.tif"
+    moving_path = rf"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-moving.tif"
     elastix_paths = [
         elastix_dir / f"C{nn:02}-tform-elastix-param-0.txt",
         elastix_dir / f"C{nn:02}-tform-elastix-param-1.txt",

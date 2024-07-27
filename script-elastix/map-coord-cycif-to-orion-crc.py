@@ -48,7 +48,7 @@ def _map_points(points_xy, param_obj, is_from_moving=True):
 
 
 affine_dir = pathlib.Path(
-    r"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/img-data"
+    r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data"
 )
 
 affine_paths = r"""
@@ -81,7 +81,7 @@ C40-affine-matrix.csv
 affine_paths = [affine_dir / pp for pp in affine_paths.strip().split("\n")]
 
 elastix_dir = pathlib.Path(
-    r"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
+    r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
 )
 
 elastix_paths = r"""
@@ -117,7 +117,7 @@ elastix_paths = [
 ]
 
 coords_dir = pathlib.Path(
-    r"/Users/yuanchen/Dropbox (HMS)/000 local remote sharing/20240714-deform-registration-crc/img-data"
+    r"/Users/yuanchen/HMS Dropbox/000 local remote sharing/20240714-deform-registration-crc/img-data"
 )
 coords_paths = """
 C17-xy-moving.csv.zip
