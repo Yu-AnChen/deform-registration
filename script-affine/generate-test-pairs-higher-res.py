@@ -7,15 +7,22 @@ import numpy as np
 #                                   C1 - C10                                   #
 # ---------------------------------------------------------------------------- #
 orion_paths = r"""
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S29_A24_C59kX_E15@20220106_014304_946511-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S30_A24_C59kX_E15@20220106_014319_409148-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S31_A24_C59kX_E15@20220106_014409_014236-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S32_A24_C59kX_E15@20220106_014630_553652-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S34_A24_C59kX_E15@20220107_202112_212579-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S35_A24_C59kX_E15@20220108_012037_490594-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round3\P37_S57_Full_A24_C59nX_E15@20220224_011032_774034-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S37_A24_C59kX_E15@20220108_012113_953544-zlib.ome.tiff
-Z:\RareCyte-S3\P37_CRCstudy_Round1\P37_S38_A24_C59kX_E15@20220108_012130_664519-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S29_A24_C59kX_E15@20220106_014304_946511-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S30_A24_C59kX_E15@20220106_014319_409148-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S31_A24_C59kX_E15@20220106_014409_014236-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S32_A24_C59kX_E15@20220106_014630_553652-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S33_A24_C59kX_E15@20220107_180446_881530-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S34_A24_C59kX_E15@20220107_202112_212579-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S35_A24_C59kX_E15@20220108_012037_490594-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round3\P37_S57_Full_A24_C59nX_E15@20220224_011032_774034-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S37_A24_C59kX_E15@20220108_012113_953544-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round1\P37_S38_A24_C59kX_E15@20220108_012130_664519-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S43_Full_A24_C59mX_E15@20220128_171510_544056-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S44_Full_A24_C59mX_E15@20220128_171448_903938-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S45_Full_A24_C59mX_E15@20220128_171409_633341-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S46_Full_A24_C59mX_E15@20220128_013821_398547-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S47_Full_A24_C59mX_E15@20220128_020654_901143-zlib.ome.tiff
+\\files.med.harvard.edu\ImStor\sorger\data\RareCyte\RareCyte-S3\P37_CRCstudy_Round2\P37_S48_Full_A24_C59mX_E15@20220129_015105_865195-zlib.ome.tiff
 """.strip().split("\n")
 
 cycif_paths = r"""
@@ -23,14 +30,21 @@ Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_01.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_02.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_03.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_04.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_05.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_06.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_08.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_09.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_10.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_11.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_12.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_13.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_14.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_15.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_16.ome.tif
+Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_17.ome.tif
 """.strip().split("\n")
 
-case_number = [1, 2, 3, 4, 6, 7, 8, 9, 10]
+case_number = list(range(1, 17))
 
 
 # ---------------------------------------------------------------------------- #
@@ -97,7 +111,7 @@ V:\hits\lsp\collaborations\lsp-analysis\cycif-production\221-CRC_ORION-2022APR\L
 case_number = list(range(17, 41)) + [332]
 
 
-for oo, cc, nn in zip(orion_paths[5:6], cycif_paths[5:6], case_number[5:6]):
+for oo, cc, nn in zip(orion_paths[:], cycif_paths[:], case_number[:]):
     r1 = palom.reader.OmePyramidReader(oo)
     r2 = palom.reader.OmePyramidReader(cc)
 
@@ -132,6 +146,7 @@ for oo, cc, nn in zip(orion_paths[5:6], cycif_paths[5:6], case_number[5:6]):
         np.floor(moving).astype(r2.pyramid[0].dtype),
         compression="zlib",
     )
+    tifffile.imwrite(f"C{nn:02}-moving-ori.tif", img, compression="zlib")
 
 
 # ---------------------------------------------------------------------------- #
