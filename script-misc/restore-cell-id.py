@@ -99,6 +99,87 @@ Parallel(n_jobs=3, verbose=1)(
 
 
 # ---------------------------------------------------------------------------- #
+#              Add mapped original CellID back to cylinter tables              #
+# ---------------------------------------------------------------------------- #
+import pathlib
+import pandas as pd
+from joblib import Parallel, delayed  # noqa: E402
+
+
+cylinter_paths = r"""
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10532.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10543.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10554.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10566.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10576.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10587.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10598.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10609.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10621.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10631.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10642.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output\LSP10653.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10664.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10675.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10687.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10697.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10708.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10719.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10730.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10741.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10752.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10763.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10774.csv
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\cylinter_output_2\LSP10790.csv
+""".strip().split("\n")
+
+cell_id_paths = r"""
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C17-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C18-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C19-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C20-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C21-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C22-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C23-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C24-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C25-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C26-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C27-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C28-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C29-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C30-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C31-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C32-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C33-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C34-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C35-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C36-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C37-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C38-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C39-xy-moving.csv.zip
+Z:\JL503_JERRY\221-CRC_ORION-2022APR\temp-YC\ori-cell-id\C40-xy-moving.csv.zip
+""".strip().split("\n")
+
+out_dir = pathlib.Path(r"Z:\JL503_JERRY\221-CRC_ORION-2022APR\POST_CYLINTER")
+out_dir = pathlib.Path(r"C:\temp-cell-tables-crc-cycif")
+
+
+def update_table(path_ori, path_id):
+    df = pd.read_csv(path_ori)
+    df_id = pd.read_csv(path_id)
+    assert len(df) == len(df_id), path_ori
+    df["CellID"] = df_id["CellID"]
+    df["Sample"] = pathlib.Path(path_ori).name.replace(".csv", "")
+    df.to_csv(out_dir / pathlib.Path(path_ori).name, index=False)
+    return
+
+
+Parallel(n_jobs=3, verbose=1)(
+    delayed(update_table)(p1, p2)
+    for p1, p2 in zip(cylinter_paths[1:], cell_id_paths[1:])
+)
+
+# ---------------------------------------------------------------------------- #
 #                       Add the cylinter id (LSPID_index)                      #
 #                  because Jerry's matlab code also drop cells                 #
 # ---------------------------------------------------------------------------- #
@@ -157,8 +238,6 @@ from joblib import Parallel, delayed  # noqa: E402
 Parallel(n_jobs=4, verbose=1)(
     delayed(wrap)(pp, oo) for pp, oo in zip(cylinter_paths, out_paths)
 )
-
-
 
 
 id_paths = """
