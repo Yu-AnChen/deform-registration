@@ -147,7 +147,7 @@ def _map_points(points_xy, param_obj, is_from_moving=True):
         dx, dy = np.moveaxis(inverted_fixed_point, 2, 0)
 
     my, mx = np.mgrid[: shape[0], : shape[1]].astype("float32")
-    
+
     mapped_points_xy = np.vstack(
         [
             ndi.map_coordinates(mx + dx, np.fliplr(points).T),
@@ -159,7 +159,7 @@ def _map_points(points_xy, param_obj, is_from_moving=True):
 
 import itertools  # noqa: E402
 
-sizes = [200, 300, 400, 500]
+sizes = [400, 500]
 n_samples = [5000, 4000, 3000]
 
 conditions = [
@@ -167,33 +167,38 @@ conditions = [
     for ss, ns in itertools.product(sizes, n_samples)
 ]
 
-case_number = range(17, 41)
+# case_number = range(17, 41)
+case_number = range(1, 17)
 # case_number = [1, 2, 3, 4, 6, 7, 8, 9, 10]
 
 elastix_config_dir = "/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/reg-param/config"
 elastix_tform_dir = "/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/reg-param/tform"
 
 v = napari.Viewer()
-for nn in case_number:
-    print(f"C{nn:02}")
-    ref_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-ref.tif"
-    moving_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/C{nn:02}-moving.tif"
+for nn in case_number[:]:
+    print(f"immune-C{nn:02}")
+    ref_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/immune-C{nn:02}-ref.tif"
+    moving_path = rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/immune-C{nn:02}-moving.tif"
     img, params_tform, params_reg = try_conditions(
         ref_path=ref_path, moving_path=moving_path, conditions=conditions
     )
 
     # write parameters to disk
-    write_parameter(params_reg, elastix_config_dir, f"C{nn:02}-")
-    write_parameter(params_tform, elastix_tform_dir, f"C{nn:02}-tform-")
+    write_parameter(params_reg, elastix_config_dir, f"immune-C{nn:02}-")
+    write_parameter(params_tform, elastix_tform_dir, f"immune-C{nn:02}-tform-")
 
-    napari_kwargs = dict(blending="additive", visible=False, name=f"C{nn:02}")
+    napari_kwargs = dict(blending="additive", visible=False, name=f"immune-C{nn:02}")
     v.add_image(
-        tifffile.imread(ref_path), colormap="bop blue", visible=False, name=f"C{nn:02}"
+        tifffile.imread(ref_path),
+        colormap="bop blue",
+        visible=False,
+        name=f"immune-C{nn:02}",
     )
     v.add_image(tifffile.imread(moving_path), colormap="bop purple", **napari_kwargs)
     v.add_image(img, colormap="bop orange", **napari_kwargs)
 
 
+# ------------------------------- try one image ------------------------------ #
 _ = run_one_setting(
     "/Users/yuanchen/projects/STalign/docs/img_data/test-elastix-img-pair/C07-ref.tif",
     "/Users/yuanchen/projects/STalign/docs/img_data/test-elastix-img-pair/C07-moving.tif",

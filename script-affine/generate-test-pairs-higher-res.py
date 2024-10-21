@@ -44,6 +44,25 @@ Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_16.ome.tif
 Z:\JL503_JERRY\192-CRCWSI_Tumor-2021JUL\TNPCRC_17.ome.tif
 """.strip().split("\n")
 
+cycif_paths = r"""
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_01.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_02.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_03.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_04.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_05.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_06.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_08.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_09.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_10.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_11.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_12.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_13.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_14.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_15.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_16.ome.tif
+Z:\JL503_JERRY\191-CRCWSI_Immune-2021JUL\TNPCRC_17.ome.tif
+""".strip().split("\n")
+
 case_number = list(range(1, 17))
 
 
@@ -124,12 +143,13 @@ for oo, cc, nn in zip(orion_paths[:], cycif_paths[:], case_number[:]):
         ref_thumbnail_down_factor=2 ** (7 - 5),
         moving_thumbnail_down_factor=2 ** (6 - 4),
     )
-    aligner.coarse_register_affine(
+    _mx = palom.register_dev.search_then_register(
+        np.asarray(aligner.ref_thumbnail),
+        np.asarray(aligner.moving_thumbnail),
         n_keypoints=20_000,
-        test_flip=True,
-        test_intensity_invert=False,
         auto_mask=True,
     )
+    aligner.coarse_affine_matrix = np.vstack([_mx, [0, 0, 1]])
 
     ref = aligner.ref_img.compute()
     img = aligner.moving_img.compute()
@@ -139,14 +159,14 @@ for oo, cc, nn in zip(orion_paths[:], cycif_paths[:], case_number[:]):
         preserve_range=True,
         output_shape=ref.shape,
     )
-    np.savetxt(f"C{nn:02}-affine-matrix.csv", aligner.affine_matrix, delimiter=",")
-    tifffile.imwrite(f"C{nn:02}-ref.tif", ref, compression="zlib")
+    np.savetxt(f"immune-C{nn:02}-affine-matrix.csv", aligner.affine_matrix, delimiter=",")
+    tifffile.imwrite(f"immune-C{nn:02}-ref.tif", ref, compression="zlib")
     tifffile.imwrite(
-        f"C{nn:02}-moving.tif",
+        f"immune-C{nn:02}-moving.tif",
         np.floor(moving).astype(r2.pyramid[0].dtype),
         compression="zlib",
     )
-    tifffile.imwrite(f"C{nn:02}-moving-ori.tif", img, compression="zlib")
+    tifffile.imwrite(f"immune-C{nn:02}-moving-ori.tif", img, compression="zlib")
 
 
 # ---------------------------------------------------------------------------- #
