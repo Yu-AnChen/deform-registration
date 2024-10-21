@@ -78,6 +78,24 @@ C38-affine-matrix.csv
 C39-affine-matrix.csv
 C40-affine-matrix.csv
 """
+affine_paths = """
+C01-affine-matrix.csv
+C02-affine-matrix.csv
+C03-affine-matrix.csv
+C04-affine-matrix.csv
+C05-affine-matrix.csv
+C06-affine-matrix.csv
+C07-affine-matrix.csv
+C08-affine-matrix.csv
+C09-affine-matrix.csv
+C10-affine-matrix.csv
+C11-affine-matrix.csv
+C12-affine-matrix.csv
+C13-affine-matrix.csv
+C14-affine-matrix.csv
+C15-affine-matrix.csv
+C16-affine-matrix.csv
+"""
 affine_paths = [affine_dir / pp for pp in affine_paths.strip().split("\n")]
 
 elastix_dir = pathlib.Path(
@@ -110,6 +128,24 @@ C37-tform-elastix-param-0.txt;C37-tform-elastix-param-1.txt
 C38-tform-elastix-param-0.txt;C38-tform-elastix-param-1.txt
 C39-tform-elastix-param-0.txt;C39-tform-elastix-param-1.txt
 C40-tform-elastix-param-0.txt;C40-tform-elastix-param-1.txt
+"""
+elastix_paths = """
+C01-tform-elastix-param-0.txt;C01-tform-elastix-param-1.txt
+C02-tform-elastix-param-0.txt;C02-tform-elastix-param-1.txt
+C03-tform-elastix-param-0.txt;C03-tform-elastix-param-1.txt
+C04-tform-elastix-param-0.txt;C04-tform-elastix-param-1.txt
+C05-tform-elastix-param-0.txt;C05-tform-elastix-param-1.txt
+C06-tform-elastix-param-0.txt;C06-tform-elastix-param-1.txt
+C07-tform-elastix-param-0.txt;C07-tform-elastix-param-1.txt
+C08-tform-elastix-param-0.txt;C08-tform-elastix-param-1.txt
+C09-tform-elastix-param-0.txt;C09-tform-elastix-param-1.txt
+C10-tform-elastix-param-0.txt;C10-tform-elastix-param-1.txt
+C11-tform-elastix-param-0.txt;C11-tform-elastix-param-1.txt
+C12-tform-elastix-param-0.txt;C12-tform-elastix-param-1.txt
+C13-tform-elastix-param-0.txt;C13-tform-elastix-param-1.txt
+C14-tform-elastix-param-0.txt;C14-tform-elastix-param-1.txt
+C15-tform-elastix-param-0.txt;C15-tform-elastix-param-1.txt
+C16-tform-elastix-param-0.txt;C16-tform-elastix-param-1.txt
 """
 elastix_paths = [
     [elastix_dir / ppp for ppp in pp.split(";")]
@@ -145,6 +181,24 @@ C37-xy-moving.csv.zip
 C38-xy-moving.csv.zip
 C39-xy-moving.csv.zip
 C40-xy-moving.csv.zip
+"""
+coords_paths = """
+TNPCRC_01_cellRing.csv.zip
+TNPCRC_02_cellRing.csv.zip
+TNPCRC_03_cellRing.csv.zip
+TNPCRC_04_cellRing.csv.zip
+TNPCRC_05_cellRing.csv.zip
+TNPCRC_06_cellRing.csv.zip
+TNPCRC_08_cellRing.csv.zip
+TNPCRC_09_cellRing.csv.zip
+TNPCRC_10_cellRing.csv.zip
+TNPCRC_11_cellRing.csv.zip
+TNPCRC_12_cellRing.csv.zip
+TNPCRC_13_cellRing.csv.zip
+TNPCRC_14_cellRing.csv.zip
+TNPCRC_15_cellRing.csv.zip
+TNPCRC_16_cellRing.csv.zip
+TNPCRC_17_cellRing.csv.zip
 """
 coords_paths = [coords_dir / pp for pp in coords_paths.strip().split("\n")]
 
@@ -187,5 +241,8 @@ for csv, aa, ee in zip(coords_paths[:], affine_paths[:], elastix_paths[:]):
     process_coordniate_file(
         csv, ee, affine_before=tform_before, affine_after=tform_after
     ).rename(columns=lambda x: f"t{x}").to_csv(
-        csv.parent / csv.name.replace("-moving.csv.zip", "-moving-mapped.csv.zip")
+        csv.parent
+        / csv.name.replace("-moving.csv.zip", "-moving-mapped.csv.zip").replace(
+            "_cellRing.csv.zip", "_cellRing-mapped.csv.zip"
+        )
     )
