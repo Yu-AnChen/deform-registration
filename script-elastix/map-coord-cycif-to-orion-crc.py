@@ -96,6 +96,24 @@ C14-affine-matrix.csv
 C15-affine-matrix.csv
 C16-affine-matrix.csv
 """
+affine_paths = """
+immune-C01-affine-matrix.csv
+immune-C02-affine-matrix.csv
+immune-C03-affine-matrix.csv
+immune-C04-affine-matrix.csv
+immune-C05-affine-matrix.csv
+immune-C06-affine-matrix.csv
+immune-C07-affine-matrix.csv
+immune-C08-affine-matrix.csv
+immune-C09-affine-matrix.csv
+immune-C10-affine-matrix.csv
+immune-C11-affine-matrix.csv
+immune-C12-affine-matrix.csv
+immune-C13-affine-matrix.csv
+immune-C14-affine-matrix.csv
+immune-C15-affine-matrix.csv
+immune-C16-affine-matrix.csv
+"""
 affine_paths = [affine_dir / pp for pp in affine_paths.strip().split("\n")]
 
 elastix_dir = pathlib.Path(
@@ -146,6 +164,24 @@ C13-tform-elastix-param-0.txt;C13-tform-elastix-param-1.txt
 C14-tform-elastix-param-0.txt;C14-tform-elastix-param-1.txt
 C15-tform-elastix-param-0.txt;C15-tform-elastix-param-1.txt
 C16-tform-elastix-param-0.txt;C16-tform-elastix-param-1.txt
+"""
+elastix_paths = """
+immune-C01-tform-elastix-param-0.txt;immune-C01-tform-elastix-param-1.txt
+immune-C02-tform-elastix-param-0.txt;immune-C02-tform-elastix-param-1.txt
+immune-C03-tform-elastix-param-0.txt;immune-C03-tform-elastix-param-1.txt
+immune-C04-tform-elastix-param-0.txt;immune-C04-tform-elastix-param-1.txt
+immune-C05-tform-elastix-param-0.txt;immune-C05-tform-elastix-param-1.txt
+immune-C06-tform-elastix-param-0.txt;immune-C06-tform-elastix-param-1.txt
+immune-C07-tform-elastix-param-0.txt;immune-C07-tform-elastix-param-1.txt
+immune-C08-tform-elastix-param-0.txt;immune-C08-tform-elastix-param-1.txt
+immune-C09-tform-elastix-param-0.txt;immune-C09-tform-elastix-param-1.txt
+immune-C10-tform-elastix-param-0.txt;immune-C10-tform-elastix-param-1.txt
+immune-C11-tform-elastix-param-0.txt;immune-C11-tform-elastix-param-1.txt
+immune-C12-tform-elastix-param-0.txt;immune-C12-tform-elastix-param-1.txt
+immune-C13-tform-elastix-param-0.txt;immune-C13-tform-elastix-param-1.txt
+immune-C14-tform-elastix-param-0.txt;immune-C14-tform-elastix-param-1.txt
+immune-C15-tform-elastix-param-0.txt;immune-C15-tform-elastix-param-1.txt
+immune-C16-tform-elastix-param-0.txt;immune-C16-tform-elastix-param-1.txt
 """
 elastix_paths = [
     [elastix_dir / ppp for ppp in pp.split(";")]
@@ -199,6 +235,24 @@ TNPCRC_14_cellRing.csv.zip
 TNPCRC_15_cellRing.csv.zip
 TNPCRC_16_cellRing.csv.zip
 TNPCRC_17_cellRing.csv.zip
+"""
+coords_paths = """
+immune-TNPCRC_01_cellRing.csv.zip
+immune-TNPCRC_02_cellRing.csv.zip
+immune-TNPCRC_03_cellRing.csv.zip
+immune-TNPCRC_04_cellRing.csv.zip
+immune-TNPCRC_05_cellRing.csv.zip
+immune-TNPCRC_06_cellRing.csv.zip
+immune-TNPCRC_08_cellRing.csv.zip
+immune-TNPCRC_09_cellRing.csv.zip
+immune-TNPCRC_10_cellRing.csv.zip
+immune-TNPCRC_11_cellRing.csv.zip
+immune-TNPCRC_12_cellRing.csv.zip
+immune-TNPCRC_13_cellRing.csv.zip
+immune-TNPCRC_14_cellRing.csv.zip
+immune-TNPCRC_15_cellRing.csv.zip
+immune-TNPCRC_16_cellRing.csv.zip
+immune-TNPCRC_17_cellRing.csv.zip
 """
 coords_paths = [coords_dir / pp for pp in coords_paths.strip().split("\n")]
 

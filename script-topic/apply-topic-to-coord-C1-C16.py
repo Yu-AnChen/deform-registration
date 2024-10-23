@@ -20,7 +20,8 @@ for nn, nno in zip(case_number, old_case_number):
     topic = np.pad(topic, [(0, 100), (0, 100)], constant_values=-1)
 
     df = pd.read_csv(
-        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/TNPCRC_{nno:02}_cellRing-mapped.csv.zip",
+        # rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/TNPCRC_{nno:02}_cellRing-mapped.csv.zip",
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/immune-TNPCRC_{nno:02}_cellRing-mapped.csv.zip",
         index_col="CellID",
     )
 
@@ -32,6 +33,7 @@ for nn, nno in zip(case_number, old_case_number):
 
     df["tTopic"] = topic[coord[:, 0], coord[:, 1]]
     df.to_csv(
-        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/TNPCRC_{nno:02}_cellRing-mapped-topic.csv.zip",
+        # rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/TNPCRC_{nno:02}_cellRing-mapped-topic.csv.zip",
+        rf"/Users/yuanchen/HMS Dropbox/Yu-An Chen/000 local remote sharing/20240714-deform-registration-crc/img-data/immune-TNPCRC_{nno:02}_cellRing-mapped-topic.csv.zip",
         compression="zip",
     )
